@@ -5,6 +5,8 @@ import { Observable } from 'rxjs';
 import { TokenStorageService } from '../Token/token-storage.service';
 import { connectableObservableDescriptor } from 'rxjs/internal/observable/ConnectableObservable';
 
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,7 @@ export class MasterListService {
 
   constructor(private http: HttpClient, private tokenService : TokenStorageService) { }
 
-  private GenericUrl = 'https://localhost:44379/api/';
+  private GenericUrl = environment.GuidanceWebAPIURL + "api/";
 
   getList<T>(ApiName: string): Observable<T[]> {
     // console.log("token in gender - " + this.tokenService.getToken());

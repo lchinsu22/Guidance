@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
-const AUTHORIZATION_API = 'https://localhost:44379/api/Account/Register';
-const AUTHENTICATION_API = 'https://localhost:44379/token';
+const AUTHORIZATION_API = environment.GuidanceWebAPIURL + "api/Account/Register";
+const AUTHENTICATION_API = environment.GuidanceWebAPIURL + "token";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })

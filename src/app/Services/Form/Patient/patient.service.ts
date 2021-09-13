@@ -6,6 +6,7 @@ import { Observable, of } from 'rxjs';
 
 import { catchError, map, tap } from 'rxjs/operators';
 import { ErrorMessageService } from 'src/app/Components/error-message/error-message.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,10 @@ export class PatientService {
     private errorMessageService : ErrorMessageService
     ) { }
 
-  private patientUrl = 'https://localhost:44379/api/Patient';
+  // private patientUrl = 'https://localhost:44379/api/Patient';
+
+  private patientUrl = environment.GuidanceWebAPIURL + "api/Patient";
+  
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

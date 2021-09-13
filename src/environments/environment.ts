@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  GuidanceWebAPIURL : 
+  GuidanceWebAPIURL : "https://localhost:44379/"
 };
 
 /*
