@@ -16,7 +16,7 @@ export class MasterListService {
   private GenericUrl = 'https://localhost:44379/api/';
 
   getList<T>(ApiName: string): Observable<T[]> {
-    console.log("token in gender - " + this.tokenService.getToken());
+    // console.log("token in gender - " + this.tokenService.getToken());
     return this.http.get<T[]>(this.GenericUrl + ApiName);
   }
 }
