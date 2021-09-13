@@ -8,6 +8,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { ErrorMessageService } from 'src/app/Components/error-message/error-message.service';
 import { environment } from 'src/environments/environment';
 
+import { Router } from '@angular/router';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +17,8 @@ export class PatientService {
 
   constructor(
     private http: HttpClient,
-    private errorMessageService : ErrorMessageService
+    private errorMessageService : ErrorMessageService,
+    private router : Router
     ) { }
 
   // private patientUrl = 'https://localhost:44379/api/Patient';
@@ -68,6 +71,10 @@ export class PatientService {
   
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
+
+      if(error.status == 401){
+        this.router.navigate([`/Login/`]);
+      }
   
       // TODO: better job of transforming error for user consumption
       this.log(`${operation} failed: ${error.message}`);

@@ -56,6 +56,7 @@ import { RegisterComponent } from './Components/register/register.component';
 import { LoginComponent } from './Components/login/login.component';
 
 import { authInterceptorProviders } from './Services/Interceptor/auth-interceptor.service';
+import { HeaderComponent } from './Components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { authInterceptorProviders } from './Services/Interceptor/auth-intercepto
     ErrorMessageComponent,
     PatientDetailsComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderComponent
     
   ],
   imports: [

@@ -29,6 +29,8 @@
       <mat-divider></mat-divider>
       <section>
         <div class="example-button-row">
+          <button mat-raised-button [routerLink]="'/Register'" color="accent">Register</button>
+          <span class="example-spacer"></span>
           <button mat-raised-button color="primary"[disabled]="!LoginForm.form.valid" >Login</button>
         </div>
       </section>
